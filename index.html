@@ -7,13 +7,42 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        // gtag('js', new Date()); gtag('config', 'G-KSGVWWPV63');
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+        });
         gtag('js', new Date());
-        // gtag('config', 'G-KSGVWWPV63');
         gtag('config', 'G-KSGVWWPV63', {
             'cookie_domain': 'toni1elias.github.io',
-            'cookie_flags': 'SameSite=None;Secure'
+            'cookie_flags': 'SameSite=None;Secure',
+            'cookie_update': false
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var banner = document.getElementById("cookie-banner-overlay");
+            var acceptBtn = document.getElementById("accept-cookies-btn");
+            var declineBtn = document.getElementById("decline-cookies-btn");
+            if (!localStorage.getItem("cookiesAccepted")) { banner.style.display = "flex"; } else { banner.style.display = "none"; }
+            acceptBtn.addEventListener("click", function () {
+                banner.style.display = "none";
+                localStorage.setItem("cookiesAccepted", "true");
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            });
+            declineBtn.addEventListener("click", function () {
+                banner.style.display = "none";
+                localStorage.setItem("cookiesAccepted", "false");
+            });
         });
     </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" lang="en"
@@ -262,6 +291,17 @@
             </div>
         </div>
     </section>
+
+    <div id="cookie-banner-overlay" class="cookie-banner">
+        <div class="cookie-box">
+            <h3>Cookie Settings</h3>
+            <p>We use cookies to optimize our website layout and analyze site traffic.</p>
+            <div class="cookie-btn-group">
+                <button id="decline-cookies-btn" class="cookie-btn cookie-btn-decline">Decline</button>
+                <button id="accept-cookies-btn" class="cookie-btn">Accept</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer py-5">
