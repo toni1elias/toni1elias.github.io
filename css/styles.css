@@ -774,7 +774,7 @@ strong {
     width: auto;
     height: auto;
     background-color: transparent;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 999999;
