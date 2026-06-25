@@ -293,6 +293,14 @@ strong {
     background: #0c0c0d;
 }
 
+.dark-mode p {
+    color: #B3CAC7;
+}
+
+.dark-mode .navbar-toggler .navbar-toggler-icon {
+    background: #B3CAC7;
+}
+
 .dark-mode .navbar-light .navbar-nav .nav-link {
     color: rgba(255, 255, 255, .8);
 }
@@ -390,12 +398,10 @@ strong {
 }
 
 @media (max-width:991px) {
+    /* .color-mode { display: none; } */
+
     .full-screen {
         padding-bottom: 4rem;
-    }
-
-    .color-mode {
-        display: none;
     }
 
     .about-image {
@@ -421,7 +427,6 @@ strong {
     }
 
     .navbar-collapse {
-        background: #fff;
         text-align: center;
         padding-bottom: 20px;
     }
