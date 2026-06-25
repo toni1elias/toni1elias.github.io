@@ -25,7 +25,7 @@
             var banner = document.getElementById("cookie-banner-overlay");
             var acceptBtn = document.getElementById("accept-cookies-btn");
             var declineBtn = document.getElementById("decline-cookies-btn");
-            if (!localStorage.getItem("cookiesAccepted")) { banner.style.display = "flex"; } else { banner.style.display = "none"; }
+            if (!localStorage.getItem("cookiesAccepted")) { banner.style.display = "flex"; }
             acceptBtn.addEventListener("click", function () {
                 banner.style.display = "none";
                 localStorage.setItem("cookiesAccepted", "true");
