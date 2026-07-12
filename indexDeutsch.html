@@ -14,34 +14,27 @@
             'ad_personalization': 'denied',
             'wait_for_update': 500
         });
-        function grantConsent() {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'analytics_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
-            });
-        }
         gtag('js', new Date());
         gtag('config', 'G-KSGVWWPV63', {
-            'cookie_domain': 'none',
+            'cookie_domain': 'toni1elias.github.io',
             'cookie_flags': 'SameSite=None;Secure',
+            'cookie_expires': 8640000,
             'cookie_update': false
         });
         document.addEventListener("DOMContentLoaded", function () {
             var banner = document.getElementById("cookie-banner-overlay");
             var acceptButton = document.getElementById("accept-cookies-btn");
             var declineButton = document.getElementById("decline-cookies-btn");
-            var initialConsent = localStorage.getItem("cookiesAccepted");
-            if (initialConsent === "true") {
-                grantConsent();
-            } else if (!initialConsent) {
-                banner.style.display = "flex";
-            }
+            if (!localStorage.getItem("cookiesAccepted")) { banner.style.display = "flex"; }
             acceptButton.addEventListener("click", function () {
                 banner.style.display = "none";
                 localStorage.setItem("cookiesAccepted", "true");
-                grantConsent();
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
             });
             declineButton.addEventListener("click", function () {
                 banner.style.display = "none";
