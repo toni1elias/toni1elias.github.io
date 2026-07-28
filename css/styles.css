@@ -184,6 +184,7 @@ strong {
     z-index: 999999;
     will-change: transform;
     transition: transform .2s linear;
+    overflow: hidden !important;
 }
 
 .navbar[class*="-unpinned"] {
@@ -253,6 +254,7 @@ strong {
     outline: 0;
     cursor: pointer;
     margin-right: 10px;
+
 }
 
 .navbar-toggler:focus {
