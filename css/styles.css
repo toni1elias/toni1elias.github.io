@@ -10,7 +10,7 @@
     --color-white: #FFFFFF;
     --color-white-light: #EEEEEE;
     --color-text-dark: #B3CAC7;
-    --color-heading-1: #1f1f1f;
+    --color-heading-1: #1F1F1F;
     --color-heading-2: #484848;
 }
 
@@ -184,7 +184,6 @@ strong {
     z-index: 999999;
     will-change: transform;
     transition: transform .2s linear;
-    overflow: hidden !important;
 }
 
 .navbar[class*="-unpinned"] {
@@ -398,25 +397,33 @@ strong {
     color: var(--color-white-light);
 }
 
+.about-image {
+    margin-top: 2.3rem;
+}
+
 .about-image.svg img {
-    animation: slideInRight 1.7s cubic-bezier(0.5, 0.7, 0.5, 1) forwards;
+    animation: slideTransform 1.7s cubic-bezier(0.5, 0.7, 0.5, 1) forwards;
     opacity: 0;
 }
 
-@keyframes slideInRight {
+@keyframes slideTransform {
     from {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateY(-100px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 .about-image.svg img:hover {
     filter: drop-shadow(0 15px 20px var(--color-heading-2));
+}
+
+.dark-mode .about-image.svg img:hover {
+    filter: drop-shadow(0 15px 20px var(--color-text-dark));
 }
 
 .nav-link.no-nav-style {
@@ -928,6 +935,10 @@ strong {
     justify-items: center;
 }
 
+.container-services {
+    border: solid var(--color-slate-gray);
+}
+
 @media (min-width: 992px) {
     .contact-grid {
         grid-template-columns: repeat(8, 1fr);
@@ -947,7 +958,7 @@ strong {
     }
 
     .about-image {
-        margin-top: 4em;
+        margin-top: 3rem;
     }
 
     .contact-info {
