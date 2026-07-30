@@ -110,6 +110,10 @@ strong {
     color: var(--color-white) !important;
 }
 
+.custom-btn {
+    height: 3rem;
+}
+
 .animated {
     position: relative;
 }
@@ -907,7 +911,7 @@ strong {
 }
 
 .row-full-screen {
-    min-height: 75vh;
+    min-height: auto;
 }
 
 .contact-item {
