@@ -110,10 +110,6 @@ strong {
     color: var(--color-white) !important;
 }
 
-.custom-btn {
-    height: 3rem;
-}
-
 .animated {
     position: relative;
 }
@@ -851,7 +847,7 @@ strong {
     border-radius: 16px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     border: 2px solid var(--color-slate-gray);
     max-width: 100%;
@@ -1021,7 +1017,7 @@ strong {
 
     .custom-btn {
         display: block;
-        margin: 10px 0;
+        margin: 25px 0;
     }
 
     .owl-theme .owl-nav {
@@ -1070,7 +1066,7 @@ strong {
     }
 
     .btn-square {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         aspect-ratio: 4 / 5;
     }
 }
